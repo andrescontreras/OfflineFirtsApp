@@ -1,0 +1,30 @@
+<ion-row class="ion-text-center align-items-center">
+  <ion-col size="12">
+    <ion-text><h4>UPDATE TOOLKIT</h4></ion-text>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="data.name" placeholder="Name"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="data.phone" placeholder="Phone"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="10" offset="1">
+    <ion-button
+      expand="block"
+      color="success"
+      (click)="UpdateRecord(type, description, amount)"
+      >Update</ion-button
+    >
+  </ion-col>
+  <ion-col size="10" offset="1">
+    <ion-button expand="block" color="danger" (click)="CloseModal()"
+      >Cancel</ion-button
+    >
+  </ion-col>
+</ion-row>
+<ion-row> </ion-row>

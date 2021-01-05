@@ -1,0 +1,7 @@
+{
+  "name": "Ion5Fire",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
