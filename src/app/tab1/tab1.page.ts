@@ -26,11 +26,9 @@ export class Tab1Page {
     this.addrecord = { type: '', description: '', amount: null };
 
     this.getData();
-  }
-
-  ionViewWillEnter() {
-    this.updateNetStatus(this.netStatusService.netStatus);
-    console.log('will enter tab 1');
+    this.netStatusService.netStatusSubject.subscribe((isEnabled) => {
+      this.changeNetStatus(isEnabled);
+    });
   }
 
   async getData() {
@@ -95,12 +93,14 @@ export class Tab1Page {
   }
 
   updateNetStatus(isEnabled: boolean) {
+    this.netStatusService.netStatusSubject.next(isEnabled);
+  }
+
+  changeNetStatus(isEnabled: boolean) {
     if (isEnabled) {
-      this.netStatusService.enableNetwork();
       this.netStatus = 'ONLINE';
       this.colorNetEstatus = 'success';
     } else {
-      this.netStatusService.disableNetwork();
       this.netStatus = 'OFFLINE';
       this.colorNetEstatus = 'danger';
     }

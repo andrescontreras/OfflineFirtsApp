@@ -18,6 +18,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { UpdaterecordComponent } from './components/updaterecord/updaterecord.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatetoolkitComponent } from './components/updatetoolkit/updatetoolkit.component';
+import { Network } from '@ionic-native/network/ngx';
+import { SpeedTestModule } from 'ng-speed-test';
 
 @NgModule({
   declarations: [AppComponent, UpdaterecordComponent, UpdatetoolkitComponent],
@@ -25,15 +27,16 @@ import { UpdatetoolkitComponent } from './components/updatetoolkit/updatetoolkit
   imports: [
     BrowserModule,
     FormsModule,
+    SpeedTestModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'firebase'),
     AngularFirestoreModule.enablePersistence(),
-    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Network,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

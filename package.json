@@ -27,6 +27,7 @@
     "@ionic/angular": "^5.0.0",
     "cordova-android": "9.0.0",
     "firebase": "^8.1.2",
+    "ng-speed-test": "^2.1.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -40,7 +41,7 @@
     "@ionic/angular-toolkit": "^2.3.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.19.12",
     "codelyzer": "^6.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",

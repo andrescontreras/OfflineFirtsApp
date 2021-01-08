@@ -6,6 +6,7 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { Network } from '@ionic-native/network/ngx';
 
 @NgModule({
   imports: [
@@ -16,5 +17,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     Tab1PageRoutingModule,
   ],
   declarations: [Tab1Page],
+  providers: [Network],
 })
 export class Tab1PageModule {}

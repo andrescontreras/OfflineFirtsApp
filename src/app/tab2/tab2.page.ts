@@ -25,10 +25,13 @@ export class Tab2Page implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.netStatusService.netStatusSubject.subscribe((isEnabled) => {
+      this.changeNetStatus(isEnabled);
+    });
   }
 
   ionViewWillEnter() {
-    this.updateNetStatus(this.netStatusService.netStatus);
+    // this.updateNetStatus(this.netStatusService.netStatus);
     console.log('will enter tab 2');
   }
 
@@ -50,13 +53,15 @@ export class Tab2Page implements OnInit {
   }
 
   updateNetStatus(isEnabled: boolean) {
+    console.log('change status', isEnabled);
+    this.netStatusService.netStatusSubject.next(isEnabled);
+  }
+
+  changeNetStatus(isEnabled: boolean) {
     if (isEnabled) {
-      this.netStatusService.enableNetwork();
       this.netStatus = 'ONLINE';
       this.colorNetEstatus = 'success';
     } else {
-      this.netStatusService.disableNetwork();
-      this.netStatusService.netStatus = false;
       this.netStatus = 'OFFLINE';
       this.colorNetEstatus = 'danger';
     }
