@@ -23,9 +23,9 @@ export class NetStatusService {
     this.changeNetStatus();
     this.networkLatency();
 
-    this.firestore.firestore.settings({
-      cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED, // disable LRU garbage collection
-    });
+    // this.firestore.firestore.settings({
+    //   cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED, // disable LRU garbage collection
+    // });
   }
 
   changeNetStatus() {
@@ -51,7 +51,7 @@ export class NetStatusService {
   checkconnection() {
     // watch network for a disconnection
     this.network.onDisconnect().subscribe(() => {
-      console.log('network was disconnected :-(');
+      console.log('network was disconnected :-(***********');
       this.presentToast('network was disconnected :-(');
       this.netStatusSubject.next(false);
     });
@@ -61,7 +61,7 @@ export class NetStatusService {
 
     // watch network for a connection
     this.network.onConnect().subscribe(() => {
-      console.log('network connected!');
+      console.log('network connected!************');
       this.presentToast('network connected!');
       // We just got a connection but we need to wait briefly
       // before we determine the connection type. Might need to wait.

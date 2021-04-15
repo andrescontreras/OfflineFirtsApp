@@ -38,14 +38,15 @@ export class Tab2Page implements OnInit {
   async getData() {
     this.firestore
       .collection('/Toolkit/')
-      .snapshotChanges()
+      .get()
       .pipe()
       .subscribe((res) => {
+        console.log('aaaaa', res);
         if (res) {
-          this.toolkits = res.map((e) => {
+          this.toolkits = res.docs.map((e) => {
             return {
-              id: e.payload.doc.id,
-              data: e.payload.doc.data(),
+              id: e.id,
+              data: e.data(),
             };
           });
         }

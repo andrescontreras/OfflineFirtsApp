@@ -14,7 +14,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
 //IMPORT FIRESTORE (DB) MODULE TO PERFORM A QUERY
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreModule,
+} from '@angular/fire/firestore';
 import { UpdaterecordComponent } from './components/updaterecord/updaterecord.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatetoolkitComponent } from './components/updatetoolkit/updatetoolkit.component';
